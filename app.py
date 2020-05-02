@@ -14,8 +14,8 @@ def home():
 #Route  of the main index page
 @app.route("/predict",methods=['GET'])
 def predict():
-    from sklearn.externals import joblib
     
+    from sklearn.externals import joblib
     model = joblib.load('hd_predic.ml')
     predicted = model.predict([[int(request.args['age']), 
                         int(request.args['sex']), 
